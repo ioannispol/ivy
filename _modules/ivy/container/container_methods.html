@@ -37278,7 +37278,7 @@
 <span class="sd">    With :class:`ivy.Container` input:</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a = ivy.array([1., 2., 3.]), b = ivy.array([3., 4., 5.]))</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.zero_pad(x, pad_width = [[2, 3]])</span>
+<span class="sd">    &gt;&gt;&gt; y = x.zero_pad(pad_width = [[2, 3]])</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([0., 0., 1., 2., 3., 0., 0., 0.]),</span>
