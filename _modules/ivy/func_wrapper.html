@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/device.html">Device</a></li>
@@ -149,6 +150,7 @@
     <span class="s2">&quot;infer_dtype&quot;</span><span class="p">,</span>
     <span class="s2">&quot;integer_arrays_to_float&quot;</span><span class="p">,</span>
     <span class="s2">&quot;outputs_to_ivy_arrays&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outputs_to_native_arrays&quot;</span><span class="p">,</span>
     <span class="s2">&quot;inputs_to_native_arrays&quot;</span><span class="p">,</span>
     <span class="s2">&quot;inputs_to_ivy_arrays&quot;</span><span class="p">,</span>
     <span class="s2">&quot;handle_out_argument&quot;</span><span class="p">,</span>
@@ -328,6 +330,41 @@
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">outputs_to_ivy_arrays</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
+
+
+<div class="viewcode-block" id="output_to_native_arrays"><a class="viewcode-back" href="../../func_wrapper/output_to_native_arrays.html#ivy.func_wrapper.output_to_native_arrays">[docs]</a><span class="k">def</span> <span class="nf">output_to_native_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calls the function, and then converts all `ivy.Array` instances in</span>
+<span class="sd">    the function return into `ivy.NativeArray` instances.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    args</span>
+<span class="sd">        The arguments to be passed to the function.</span>
+
+<span class="sd">    kwargs</span>
+<span class="sd">        The keyword arguments to be passed to the function.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        The return of the function, with ivy arrays as native arrays.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="p">{</span><span class="nb">tuple</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="n">new_fn</span><span class="o">.</span><span class="n">outputs_to_native_arrays</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">new_fn</span></div>
+
+
+<div class="viewcode-block" id="to_ivy_arrays_and_back"><a class="viewcode-back" href="../../func_wrapper/to_ivy_arrays_and_back.html#ivy.func_wrapper.to_ivy_arrays_and_back">[docs]</a><span class="k">def</span> <span class="nf">to_ivy_arrays_and_back</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wraps `fn` so that input arrays are all converted to `ivy.Array` instances</span>
+<span class="sd">    and return arrays are all converted to `ivy.NativeArray` instances.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">output_to_native_arrays</span><span class="p">(</span><span class="n">inputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="to_native_arrays_and_back"><a class="viewcode-back" href="../../func_wrapper/to_native_arrays_and_back.html#ivy.func_wrapper.to_native_arrays_and_back">[docs]</a><span class="k">def</span> <span class="nf">to_native_arrays_and_back</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>

@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/device.html">Device</a></li>
@@ -213,6 +214,11 @@
     <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_greater</span><span class="p">(</span>
         <span class="n">std</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">allow_equal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;std must be non-negative&quot;</span>
     <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_check_shapes_broadcastable</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_shapes_broadcastable</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">inp</span><span class="p">)</span>
 
 
 <span class="c1"># Extra #</span>

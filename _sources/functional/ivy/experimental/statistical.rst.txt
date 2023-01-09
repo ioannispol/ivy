@@ -17,4 +17,5 @@ Statistical
    statistical/nanmean.rst
    statistical/unravel_index.rst
    statistical/quantile.rst
+   statistical/corrcoef.rst
 

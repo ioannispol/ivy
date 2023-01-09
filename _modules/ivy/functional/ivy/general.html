@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/device.html">Device</a></li>
@@ -1159,6 +1160,31 @@
 <span class="sd">        New array with the final dimension expanded, and the encodings stored in this</span>
 <span class="sd">        channel.</span>
 
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([1,2,3])</span>
+<span class="sd">    &gt;&gt;&gt; y = 1.5</span>
+<span class="sd">    &gt;&gt;&gt; z = ivy.fourier_encode(x,y)</span>
+<span class="sd">    &gt;&gt;&gt; print(z)</span>
+<span class="sd">    ivy.array([[ 1.0000000e+00, 1.2246468e-16, 0.0000000e+00, 0.0000000e+00,</span>
+<span class="sd">                 0.0000000e+00, -1.0000000e+00, 1.0000000e+00, 1.0000000e+00,</span>
+<span class="sd">                 1.0000000e+00],</span>
+<span class="sd">               [ 2.0000000e+00, -2.4492936e-16, 0.0000000e+00, 0.0000000e+00,</span>
+<span class="sd">                 0.0000000e+00, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00,</span>
+<span class="sd">                 1.0000000e+00],</span>
+<span class="sd">               [ 3.0000000e+00, 3.6739404e-16, 0.0000000e+00, 0.0000000e+00,</span>
+<span class="sd">                 0.0000000e+00, -1.0000000e+00, 1.0000000e+00, 1.0000000e+00,</span>
+<span class="sd">                 1.0000000e+00]])</span>
+
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([3,10])</span>
+<span class="sd">    &gt;&gt;&gt; y = 2.5</span>
+<span class="sd">    &gt;&gt;&gt; z = ivy.fourier_encode(x,y, num_bands=3)</span>
+<span class="sd">    &gt;&gt;&gt; print(z)</span>
+<span class="sd">    ivy.array([[ 3.0000000e+00,  3.6739404e-16,  3.6739404e-16, 3.6739404e-16,</span>
+<span class="sd">                -1.0000000e+00, -1.0000000e+00, -1.0000000e+00],</span>
+<span class="sd">               [ 1.0000000e+01, -1.2246468e-15, -1.2246468e-15, -1.2246468e-15,</span>
+<span class="sd">                 1.0000000e+00,  1.0000000e+00,  1.0000000e+00]])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">x_in</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">dim</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>

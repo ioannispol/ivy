@@ -16,4 +16,5 @@ Random
    random/dirichlet.rst
    random/beta.rst
    random/gamma.rst
+   random/poisson.rst
 

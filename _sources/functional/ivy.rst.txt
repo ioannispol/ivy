@@ -8,6 +8,7 @@
    ivy/experimental.rst
    ivy/activations.rst
    ivy/constants.rst
+   ivy/control_flow_ops.rst
    ivy/creation.rst
    ivy/data_type.rst
    ivy/device.rst

@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/device.html">Device</a></li>
@@ -924,10 +925,11 @@
 <span class="n">default_float_dtype_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">default_int_dtype_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">default_uint_dtype_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">default_complex_dtype_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="DefaultDtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultDtype.html#ivy.functional.ivy.data_type.DefaultDtype">[docs]</a><span class="k">class</span> <span class="nc">DefaultDtype</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ivy&#39;s DefaultDtype class.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="DefaultDtype.__init__"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultDtype.html#ivy.functional.ivy.data_type.DefaultDtype.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="o">=</span> <span class="n">dtype</span></div>
@@ -942,7 +944,7 @@
 
 
 <div class="viewcode-block" id="DefaultFloatDtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultFloatDtype.html#ivy.functional.ivy.data_type.DefaultFloatDtype">[docs]</a><span class="k">class</span> <span class="nc">DefaultFloatDtype</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ivy&#39;s DefaultFloatDtype class.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="DefaultFloatDtype.__init__"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultFloatDtype.html#ivy.functional.ivy.data_type.DefaultFloatDtype.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">float_dtype</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span> <span class="o">=</span> <span class="n">float_dtype</span></div>
@@ -957,7 +959,7 @@
 
 
 <div class="viewcode-block" id="DefaultIntDtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultIntDtype.html#ivy.functional.ivy.data_type.DefaultIntDtype">[docs]</a><span class="k">class</span> <span class="nc">DefaultIntDtype</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ivy&#39;s DefaultIntDtype class.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="DefaultIntDtype.__init__"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultIntDtype.html#ivy.functional.ivy.data_type.DefaultIntDtype.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">float_dtype</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span> <span class="o">=</span> <span class="n">float_dtype</span></div>
@@ -972,7 +974,7 @@
 
 
 <div class="viewcode-block" id="DefaultUintDtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultUintDtype.html#ivy.functional.ivy.data_type.DefaultUintDtype">[docs]</a><span class="k">class</span> <span class="nc">DefaultUintDtype</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ivy&#39;s DefaultUintDtype class.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="DefaultUintDtype.__init__"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultUintDtype.html#ivy.functional.ivy.data_type.DefaultUintDtype.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uint_dtype</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">UintDtype</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_uint_dtype</span> <span class="o">=</span> <span class="n">uint_dtype</span></div>
@@ -983,6 +985,21 @@
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
         <span class="n">unset_default_uint_dtype</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="DefaultComplexDtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultComplexDtype.html#ivy.functional.ivy.data_type.DefaultComplexDtype">[docs]</a><span class="k">class</span> <span class="nc">DefaultComplexDtype</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ivy&#39;s DefaultComplexDtype class.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DefaultComplexDtype.__init__"><a class="viewcode-back" href="../../../../functional/ivy/data_type/DefaultComplexDtype.html#ivy.functional.ivy.data_type.DefaultComplexDtype.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">complex_dtype</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_complex_dtype</span> <span class="o">=</span> <span class="n">complex_dtype</span></div>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">set_default_complex_dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_complex_dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="n">unset_default_complex_dtype</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 
@@ -1061,6 +1078,16 @@
     <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
         <span class="n">m</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">3.4028235e38</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">e</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">126</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">e</span> <span class="o">&gt;</span> <span class="mi">128</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">_check_complex128</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;complex128&quot;</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;complex128&quot;</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="s2">&quot;real&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="s2">&quot;imag&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_check_float64</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">real</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_check_float64</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 
 
@@ -1235,6 +1262,8 @@
         <span class="n">default_dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_float_dtype</span><span class="p">(</span><span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_uint_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
         <span class="n">default_dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_uint_dtype</span><span class="p">(</span><span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_complex_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+        <span class="n">default_dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_complex_dtype</span><span class="p">(</span><span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">default_dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_int_dtype</span><span class="p">(</span><span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">default_dtype</span></div>
@@ -1274,6 +1303,8 @@
             <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">override_dtype_check</span><span class="p">()</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">dict</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">pass</span>
+        <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_complex_dtype</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_complex_dtype</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_float_dtype</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">as_native</span><span class="o">=</span><span class="n">as_native</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
@@ -1499,6 +1530,103 @@
     <span class="k">if</span> <span class="n">as_native</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_native_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">UintDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="default_complex_dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/default_complex_dtype/default_complex_dtype_functional.html#ivy.functional.ivy.data_type.default_complex_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<span class="nd">@handle_nestable</span>
+<span class="nd">@handle_exceptions</span>
+<span class="k">def</span> <span class="nf">default_complex_dtype</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">complex_dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">ComplexDtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">as_native</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input</span>
+<span class="sd">        Number or array for inferring the complex dtype.</span>
+<span class="sd">    complex_dtype</span>
+<span class="sd">        The float dtype to be returned.</span>
+<span class="sd">    as_native</span>
+<span class="sd">        Whether to return the complex dtype as native dtype.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Return ``complex_dtype`` as native or ivy dtype if provided, else</span>
+<span class="sd">        if ``input`` is given, return its complex dtype, otherwise return the</span>
+<span class="sd">        global default complex dtype.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype()</span>
+<span class="sd">    &#39;complex64&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.set_default_complex_dtype(ivy.ComplexDtype(&quot;complex64&quot;))</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype()</span>
+<span class="sd">    &#39;complex64&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype(complex_dtype=ivy.ComplexDtype(&quot;complex128&quot;))</span>
+<span class="sd">    &#39;complex128&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype(input=4294.967346)</span>
+<span class="sd">    &#39;complex64&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([9.8,8.9], dtype=&quot;complex128&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype(input=x)</span>
+<span class="sd">    &#39;complex128&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">default_complex_dtype_stack</span>
+    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">as_native</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_native_dtype</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ComplexDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">))</span>
+    <span class="n">as_native</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">as_native</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_argwhere</span><span class="p">(</span>
+                <span class="nb">input</span><span class="p">,</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_check_complex128</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                <span class="n">stop_after_n_found</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">complex128</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">default_complex_dtype_stack</span><span class="p">:</span>
+                    <span class="n">def_dtype</span> <span class="o">=</span> <span class="n">default_dtype</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_complex_dtype</span><span class="p">(</span><span class="n">def_dtype</span><span class="p">):</span>
+                        <span class="n">ret</span> <span class="o">=</span> <span class="n">def_dtype</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;complex64&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="n">default_complex_dtype_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">_check_complex128</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">complex128</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">default_complex_dtype_stack</span><span class="p">:</span>
+                    <span class="n">def_dtype</span> <span class="o">=</span> <span class="n">default_dtype</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_complex_dtype</span><span class="p">(</span><span class="n">def_dtype</span><span class="p">):</span>
+                        <span class="n">ret</span> <span class="o">=</span> <span class="n">def_dtype</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;complex64&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="n">default_complex_dtype_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">default_complex_dtype_stack</span><span class="p">:</span>
+            <span class="n">def_dtype</span> <span class="o">=</span> <span class="n">default_dtype</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_complex_dtype</span><span class="p">(</span><span class="n">def_dtype</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">def_dtype</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;complex64&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">default_complex_dtype_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">as_native</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_native_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ComplexDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/dtype/dtype_functional.html#ivy.functional.ivy.data_type.dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
@@ -1905,6 +2033,49 @@
     <span class="k">return</span> <span class="s2">&quot;uint&quot;</span> <span class="ow">in</span> <span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="is_complex_dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/is_complex_dtype/is_complex_dtype_functional.html#ivy.functional.ivy.data_type.is_complex_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<span class="nd">@handle_nestable</span>
+<span class="nd">@handle_exceptions</span>
+<span class="k">def</span> <span class="nf">is_complex_dtype</span><span class="p">(</span>
+    <span class="n">dtype_in</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">complex</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine whether the input data type is a complex dtype.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dtype_in</span>
+<span class="sd">        The array or data type to check</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Whether or not the array or data type is of a complex dtype</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; ivy.is_complex_dtype(ivy.ComplexDtype(&quot;complex64&quot;))</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.is_complex_dtype(ivy.Dtype(&quot;complex128&quot;))</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.is_complex_dtype(ivy.IntDtype(&quot;int64&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">):</span>
+        <span class="n">dtype_in</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;complex&quot;</span> <span class="ow">in</span> <span class="n">dtype_in</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">,</span> <span class="p">(</span><span class="nb">complex</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_argwhere</span><span class="p">(</span>
+            <span class="n">dtype_in</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">complex</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">))</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;complex&quot;</span> <span class="ow">in</span> <span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="promote_types"><a class="viewcode-back" href="../../../../functional/ivy/data_type/promote_types.html#ivy.functional.ivy.data_type.promote_types">[docs]</a><span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">promote_types</span><span class="p">(</span>
     <span class="n">type1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">],</span>
@@ -2057,6 +2228,33 @@
     <span class="n">default_uint_dtype_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uint_dtype</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="set_default_complex_dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/set_default_complex_dtype.html#ivy.functional.ivy.data_type.set_default_complex_dtype">[docs]</a><span class="nd">@handle_exceptions</span>
+<span class="k">def</span> <span class="nf">set_default_complex_dtype</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">/</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets the &#39;complex_dtype&#39; as the default data type.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    complex_dtype</span>
+<span class="sd">        The complex data type to be set as the default.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :class: `ivy.Dtype` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.set_default_complex_dtype(ivy.ComplexDtype(&quot;complex64&quot;))</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype()</span>
+<span class="sd">    &#39;complex64&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.set_default_float_dtype(ivy.ComplexDtype(&quot;complex128&quot;))</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype()</span>
+<span class="sd">    &#39;complex128&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">complex_dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ComplexDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">))</span>
+    <span class="k">global</span> <span class="n">default_complex_dtype_stack</span>
+    <span class="n">default_complex_dtype_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="type_promote_arrays"><a class="viewcode-back" href="../../../../functional/ivy/data_type/type_promote_arrays.html#ivy.functional.ivy.data_type.type_promote_arrays">[docs]</a><span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">type_promote_arrays</span><span class="p">(</span>
     <span class="n">x1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
@@ -2168,6 +2366,26 @@
     <span class="k">global</span> <span class="n">default_uint_dtype_stack</span>
     <span class="k">if</span> <span class="n">default_uint_dtype_stack</span><span class="p">:</span>
         <span class="n">default_uint_dtype_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="unset_default_complex_dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/unset_default_complex_dtype.html#ivy.functional.ivy.data_type.unset_default_complex_dtype">[docs]</a><span class="nd">@handle_exceptions</span>
+<span class="k">def</span> <span class="nf">unset_default_complex_dtype</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset the current default complex dtype to the previous state.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; ivy.set_default_complex_dtype(ivy.complex64)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.set_default_complex_dtype(ivy.complex128)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype_stack</span>
+<span class="sd">    [&#39;complex64&#39;,&#39;complex128&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; ivy.unset_default_complex_dtype()</span>
+<span class="sd">    &gt;&gt;&gt; ivy.default_complex_dtype_stack</span>
+<span class="sd">    [&#39;complex64&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">default_complex_dtype_stack</span>
+    <span class="k">if</span> <span class="n">default_complex_dtype_stack</span><span class="p">:</span>
+        <span class="n">default_complex_dtype_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="valid_dtype"><a class="viewcode-back" href="../../../../functional/ivy/data_type/valid_dtype.html#ivy.functional.ivy.data_type.valid_dtype">[docs]</a><span class="nd">@handle_exceptions</span>

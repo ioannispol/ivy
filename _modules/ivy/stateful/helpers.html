@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
@@ -628,9 +629,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_add_submod_enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Add key chains to submod_call_order variable of the top module.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add key chains to submod_call_order variable of the top module.&quot;&quot;&quot;</span>
         <span class="n">sco</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_mod</span><span class="p">()</span><span class="o">.</span><span class="n">submod_call_order</span>
         <span class="n">key_chain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod_with_top_mod_key_chain</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_chain</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>

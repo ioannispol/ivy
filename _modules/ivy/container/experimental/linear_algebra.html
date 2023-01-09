@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../functional/ivy/device.html">Device</a></li>
@@ -568,17 +569,20 @@
 <span class="sd">        ivy.Container static method variant of ivy.adjoint. This method simply wraps</span>
 <span class="sd">        the function, and so the docstring for ivy.adjoint also applies to this method</span>
 <span class="sd">        with minimal changes.</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        x</span>
 <span class="sd">            container with input arrays of dimensions greater than 1.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ret</span>
 <span class="sd">            container including arrays corresponding to the conjugate transpose of</span>
 <span class="sd">            the arrays in the input container</span>
+
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; x = np.array([[1.-1.j, 2.+2.j],</span>
@@ -614,6 +618,7 @@
 <span class="sd">        ivy.Container instance method variant of ivy.adjoint.</span>
 <span class="sd">        This method simply wraps the function, and so the docstring for</span>
 <span class="sd">        ivy.adjoint also applies to this method with minimal changes.</span>
+
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; x = np.array([[1.-1.j, 2.+2.j],</span>
